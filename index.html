@@ -19,6 +19,27 @@
             width: 600px;
             border-radius: 100px;
         }
+
+        .btn {
+            width: 140px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 3px;
+            background: #07c160;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+
+        }
+
+        .innerbutton {
+            border: 2px solid rgba(0, 0, 0, 0);
+            width: 140px;
+            height: 36px;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -45,6 +66,9 @@
         <button class="button" onclick="choose()" id="button">
             <img width="30px" id="button_img" src="play.jpg" />
         </button>
+        <div class="btn">
+            <button class="innerbutton" onclick="register()">注册</button>
+        </div>
     </div>
 
     <script>
