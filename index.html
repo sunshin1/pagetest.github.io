@@ -47,7 +47,7 @@
         </button>
     </div>
     <div style="text-align: center;">
-        <button onclick="window.location.href='page2.html';">next</button>
+        <button onclick="jumpToOtherPage('page2.html');">next</button>
     </div>
 
     <script>
@@ -65,6 +65,9 @@
                 key = "播放";
                 button_img.src = "play.jpg";
             }
+        }
+        function jumpToOtherPage(url) {
+            window.location.href = url;
         }
     </script>
 
