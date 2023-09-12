@@ -19,27 +19,6 @@
             width: 600px;
             border-radius: 100px;
         }
-
-        .btn {
-            width: 140px;
-            height: 36px;
-            line-height: 36px;
-            border-radius: 3px;
-            background: #07c160;
-            color: white;
-            text-align: center;
-            font-size: 14px;
-
-        }
-
-        .innerbutton {
-            border: 2px solid rgba(0, 0, 0, 0);
-            width: 140px;
-            height: 36px;
-            background-color: rgba(0, 0, 0, 0);
-            color: white;
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -68,7 +47,7 @@
         </button>
     </div>
     <div style="text-align: center;">
-        <button class="innerbutton" onclick="register()">next</button>
+        <button  onclick="onclick="window.location.href='page2.html';>next</button>
     </div>
 
     <script>
@@ -87,12 +66,6 @@
                 button_img.src = "play.jpg";
             }
         }
-
-
-
-        video.addEventListener("timeupdate", function () {
-            progress.value = video.currentTime / video.duration * 100;
-        });
     </script>
 
 </body>
