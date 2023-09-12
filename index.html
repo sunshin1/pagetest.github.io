@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        button {
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        video {
+            width: 600px;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <hr />
+    <div style="text-align: center;">
+        <video class="video" src="video1.mp4" id="video">
+
+        </video>
+        <br>
+        <div style="text-align: center;">
+            <progress id="progress" value="0" max="100">
+                <div id="bar"></div>
+            </progress>
+        </div>
+
+
+
+    </div>
+
+    <div style="text-align: center;">
+        <button class="button" onclick="choose()" id="button">
+            <img width="30px" id="button_img" src="play.jpg" />
+        </button>
+    </div>
+
+    <script>
+        var key = "播放";
+        var video = document.getElementById("video");
+        var progress = document.getElementById("progress");
+
+        function choose() {
+            if (key == "播放") {
+                video.play();
+                key = "暂停";
+                button_img.src = "pause.jpg";
+            } else {
+                video.pause();
+                key = "播放";
+                button_img.src = "play.jpg";
+            }
+        }
+
+
+
+        video.addEventListener("timeupdate", function () {
+            progress.value = video.currentTime / video.duration * 100;
+        });
+    </script>
+
+</body>
+
+</html>
