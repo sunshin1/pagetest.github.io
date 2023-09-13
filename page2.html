@@ -63,6 +63,10 @@
                 button_img.src = "play.jpg";
             }
         }
+
+        video.addEventListener("timeupdate", function () {
+            progress.value = video.currentTime / video.duration * 100;
+        });
     </script>
 
 </body>
