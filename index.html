@@ -1,76 +1,68 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>APTX4869</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
     <style>
+        /* 添加一些样式以美化登录界面 */
         body {
-            background-image: url("background.jpg");
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
-        button {
-            border: none;
-            background-color: rgba(0, 0, 0, 0);
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
         }
 
-        video {
-            width: 600px;
-            border-radius: 100px;
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
+
+        .login-form {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* 添加其他登录界面样式 */
     </style>
 </head>
 
 <body>
+    <!-- 视频背景 -->
+    <video class="video-background" autoplay muted loop>
+        <!-- 在此处添加视频源 -->
+        <source src="video1.mp4" type="video/mp4">
+    </video>
 
-
-    <hr />
-    <div style="text-align: center;">
-        <video class="video" src="video1.mp4" id="video">
-
-        </video>
-        <br>
-        <div style="text-align: center;">
-            <progress id="progress" value="0" max="100">
-                <div id="bar"></div>
-            </progress>
+    <!-- 登录表单容器 -->
+    <div class="container">
+        <div class="login-form">
+            <!-- 在此处添加登录表单内容 -->
+            <!-- 例如：用户名和密码输入框、登录按钮等 -->
+            <h2>Login</h2>
+            <!-- 用户名输入框 -->
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <br><br>
+            <!-- 密码输入框 -->
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <br><br>
+            <!-- 登录按钮 -->
+            <button type="submit">Login</button>
         </div>
-
-
-
     </div>
-
-    <div style="text-align: center;">
-        <button class="button" onclick="choose()" id="button">
-            <img width="30px" id="button_img" src="play.jpg" />
-        </button>
-    </div>
-    <div style="text-align: center;">
-        <button onclick="jumpToOtherPage('page2.html');">next</button>
-    </div>
-
-    <script>
-        var key = "播放";
-        var video = document.getElementById("video");
-        var progress = document.getElementById("progress");
-
-        function choose() {
-            if (key == "播放") {
-                video.play();
-                key = "暂停";
-                button_img.src = "pause.jpg";
-            } else {
-                video.pause();
-                key = "播放";
-                button_img.src = "play.jpg";
-            }
-        }
-        function jumpToOtherPage(url) {
-            window.location.href = url;
-        }
-    </script>
-
 </body>
 
 </html>
