@@ -52,17 +52,27 @@
         <div class="login-form">
             <!-- 在此处添加登录表单内容 -->
             <!-- 例如：用户名和密码输入框、登录按钮等 -->
-            <h2>Login</h2>
+            <h2>登录</h2>
             <!-- 用户名输入框 -->
-            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input style="border-radius: 30px;" type="text" id="username" name="username" placeholder="账户" required>
             <br><br>
             <!-- 密码输入框 -->
-            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input style="border-radius: 30px;" type="password" id="password" name="password" placeholder="密码" required>
             <br><br>
             <!-- 登录按钮 -->
-            <button type="submit">Login</button>
+            <button style="border-radius: 100%;" type="submit" onclick="login()">ok</button>
 
+            <script>
+                function login() {
+                    if (username.value == 'sunao' && password.value == 'unknow') {
+                        // 使用 window.location.href 实现页面跳转
+                        window.location.href = "page2.html";
+                    } else {
+                        alert("error");
+                    }
 
+                }
+            </script>
         </div>
     </div>
 </body>
