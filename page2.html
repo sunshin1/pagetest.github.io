@@ -1,11 +1,41 @@
 <head>
     <style>
-        /* body {
-            background-image: url("background2.jpg"); 
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-        } */
+        /* 图片样式 */
+        .moving-image {
+            width: 300px;
+            /* 图片宽度 */
+            height: auto;
+            /* 自动计算高度 */
+            position: absolute;
+            /* top: 50%; */
+            /* 图片垂直居中 */
+            animation: moveRightLeft 10s linear infinite;
+            /* 4秒完成一次循环 */
+        }
+
+        /* 左右移动动画 */
+        @keyframes moveRightLeft {
+
+            0%,
+            100% {
+                left: 0;
+                /* 最左边 */
+            }
+
+            50% {
+                left: calc(100% - 100px);
+                /* 最右边 */
+            }
+        }
+
+
+
+
+        body {
+            background-color: bisque;
+            color: white;
+            /* 改变文本颜色以确保可读性 */
+        }
 
         button {
             border: none;
@@ -17,9 +47,21 @@
             border-radius: 100px;
         }
 
-        blog {
-            border: 10px;
-            background-color: aquamarine;
+        .custom-button {
+            background-color: #ffffff;
+            border: 1px solid #d1d1d1;
+            border-radius: 4px;
+            color: #333;
+            font-size: 14px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .custom-button:hover {
+            background-color: #f0f0f0;
+            border-color: #c1c1c1;
+            color: #555;
         }
     </style>
 </head>
@@ -28,6 +70,11 @@
 
 
     <hr />
+    <br><br>
+
+    <img src="go.png" alt="Moving Image" class="moving-image">
+
+    <br><br>
     <div style="text-align: center;">
         <video class="video" src="video2.mp4" id="video">
 
@@ -52,7 +99,7 @@
     </div>
 
     <div style="text-align: center;">
-        <button class="blog" onclick="blog()">查看简历</button>
+        <button class="custom-button" onclick="blog()">查看简历</button>
     </div>
 
     <script>
