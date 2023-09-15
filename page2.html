@@ -44,7 +44,7 @@
         </button>
 
         <br>
-        <button conclick="blog()">查看简历</button>
+        <button conclick="window.location.href = 'page3.html'">查看简历</button>
     </div>
     <!-- <div style="text-align: center;">
         <button onclick="onclick=" window.location.href='page2.html' ;>next</button>
@@ -67,21 +67,19 @@
             }
         }
 
+
+        function blog() {
+            // 使用 window.location.href 实现页面跳转
+            window.location.href = "page3.html";
+        }
+
         // video.addEventListener("timeupdate", function () {
         //     progress.value = video.currentTime / video.duration * 100;
         // });
 
 
 
-        function login() {
-            if (username.value == 'sunao' && password.value == 'unknow') {
-                // 使用 window.location.href 实现页面跳转
-                window.location.href = "page3.html";
-            } else {
-                alert("error");
-            }
 
-        }
 
 
 
