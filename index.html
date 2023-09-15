@@ -36,6 +36,29 @@
             border-radius: 10px;
         }
 
+        /* 按钮样式 */
+        .rainbow-button {
+            background: linear-gradient(45deg, red, orange, yellow, green);
+            background-size: 600% 600%;
+            animation: rainbow 8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        /* 彩虹动画 */
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
         /* 添加其他登录界面样式 */
     </style>
 </head>
@@ -60,7 +83,7 @@
             <input style="border-radius: 30px;" type="password" id="password" name="password" placeholder="密码" required>
             <br><br>
             <!-- 登录按钮 -->
-            <button style="border-radius: 30px;" type="submit" onclick="login()">go~</button>
+            <button class="rainbow-button" type="submit" onclick="login()">go~</button>
 
             <script>
                 function login() {
