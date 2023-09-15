@@ -1,5 +1,17 @@
 <head>
     <style>
+        /*时间*/
+        /* 样式可以根据需要进行调整 */
+        #clock {
+            font-size: 24px;
+            color: #333;
+        }
+
+
+
+
+
+
         /* 图片样式 */
         .moving-image {
             width: 300px;
@@ -23,7 +35,7 @@
             }
 
             50% {
-                left: calc(100% - 100px);
+                left: calc(100% - 300px);
                 /* 最右边 */
             }
         }
@@ -70,11 +82,13 @@
 
 
     <hr />
-    <br><br>
+    <br>
+    <div style="text-align: center;" id="clock">00:00:00</div>
+    <br>
 
     <img src="go.png" alt="Moving Image" class="moving-image">
 
-    <br><br>
+    <br><br><br>
     <div style="text-align: center;">
         <video class="video" src="video2.mp4" id="video">
 
@@ -131,7 +145,19 @@
 
 
 
+        function updateTime() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            clockElement.textContent = timeString;
+        }
 
+        // 更新时间并设置定时器以每秒更新一次
+        updateTime();
+        setInterval(updateTime, 1000);
 
 
 
