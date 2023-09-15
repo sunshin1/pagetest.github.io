@@ -42,6 +42,9 @@
         <button class="button" onclick="choose()" id="button">
             <img width="30px" id="button_img" src="play.jpg" />
         </button>
+
+        <br>
+        <button conclick="blog()">查看简历</button>
     </div>
     <!-- <div style="text-align: center;">
         <button onclick="onclick=" window.location.href='page2.html' ;>next</button>
@@ -67,6 +70,22 @@
         // video.addEventListener("timeupdate", function () {
         //     progress.value = video.currentTime / video.duration * 100;
         // });
+
+
+
+        function login() {
+            if (username.value == 'sunao' && password.value == 'unknow') {
+                // 使用 window.location.href 实现页面跳转
+                window.location.href = "page3.html";
+            } else {
+                alert("error");
+            }
+
+        }
+
+
+
+
     </script>
 
 </body>
