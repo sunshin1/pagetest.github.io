@@ -31,33 +31,30 @@
         }
 
         .login-form {
+
             background: rgba(255, 255, 255, 0.7);
             padding: 20px;
             border-radius: 10px;
         }
 
-        /* 按钮样式 */
-        .rainbow-button {
-            background: linear-gradient(45deg, red, orange, yellow, green);
-            background-size: 600% 600%;
-            animation: rainbow 8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-            color: black;
-            padding: 10px 20px;
+        /* 渐变按钮样式 */
+        .gradient-button {
+            background: linear-gradient(135deg, #FFC0CB, #FF5733);
+            color: white;
+            font-size: 9px;
+            padding: 7.5px 20px;
             border: none;
+            border-radius: 12.5px;
             cursor: pointer;
-            border-radius: 20px;
+            transition: background 0.3s ease;
+            font-weight: bold;
         }
 
-        /* 彩虹动画 */
-        @keyframes rainbow {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            100% {
-                background-position: 100% 50%;
-            }
+        .gradient-button:hover {
+            background: linear-gradient(135deg, #FFA07A, #E34234);
         }
+
+
 
         /* 添加其他登录界面样式 */
     </style>
@@ -67,38 +64,41 @@
     <!-- 视频背景 -->
     <video class="video-background" autoplay muted loop>
         <!-- 在此处添加视频源 -->
-        <source src="video2.mp4" type="video/mp4">
+        <source src="video3.mp4" type="video/mp4">
     </video>
 
     <!-- 登录表单容器 -->
     <div class="container">
-        <div class="login-form">
-            <!-- 在此处添加登录表单内容 -->
-            <!-- 例如：用户名和密码输入框、登录按钮等 -->
-            <h2>登录</h2>
-            <!-- 用户名输入框 -->
-            <input style="border-radius: 30px;" type="text" id="username" name="username" placeholder="账户" required>
-            <br><br>
-            <!-- 密码输入框 -->
-            <input style="border-radius: 30px;" type="password" id="password" name="password" placeholder="密码" required>
-            <br><br>
-            <!-- 登录按钮 -->
-            <button class="rainbow-button" type="submit" onclick="login()">go~</button>
-
-            <script>
-                function login() {
-                    if (username.value == 'sunao' && password.value == 'unknow') {
-                        // 使用 window.location.href 实现页面跳转
-                        window.location.href = "page2.html";
-                    } else {
-                        alert("error");
-                    }
-
+        <!-- < class="login-form"> -->
+        <!-- 在此处添加登录表单内容 -->
+        <!-- 例如：用户名和密码输入框、登录按钮等 -->
+        <!-- <h2>登录</h2> -->
+        <!-- 用户名输入框 -->
+        <br><br>
+        <hr>
+        <div style="color: aliceblue;font-weight: bold;">账号</div>
+        <input style="height: 25px;" type="text" id="username" name="username" required>
+        <div style="color: aliceblue;font-weight: bold;">密码</div>
+        <!-- 密码输入框 -->
+        <input style="height: 25px;" type="password" id="password" name="password" required>
+        <br><br>
+        <!-- 登录按钮 -->
+        <button class="gradient-button" type="submit" onclick="login()">登录</button>
+        <hr>
+        <script>
+            function login() {
+                if (username.value == 'sunao' && password.value == 'unknow') {
+                    // 使用 window.location.href 实现页面跳转
+                    window.location.href = "page2.html";
+                } else {
+                    alert("error");
                 }
 
+            }
 
-            </script>
-        </div>
+
+        </script>
+    </div>
     </div>
 </body>
 
