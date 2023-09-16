@@ -124,6 +124,11 @@
         <button class="custom-button" onclick="blog()">查看简历</button>
     </div>
 
+
+    <div style="text-align: center;">
+        <button class="custom-button" onclick="music()">音乐库</button>
+    </div>
+
     <script>
         var key = "播放";
         var video1 = document.getElementById("video1");
@@ -159,6 +164,12 @@
         function blog() {
             // 使用 window.location.href 实现页面跳转
             window.location.href = "page3.html";
+        }
+
+
+        function music() {
+            // 使用 window.location.href 实现页面跳转
+            window.location.href = "page4.html";
         }
 
         video1.addEventListener("timeupdate", function () {
