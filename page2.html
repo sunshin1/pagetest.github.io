@@ -7,56 +7,10 @@
             color: #333;
         }
 
-
-
-
-
-
-        /* 图片样式 */
-        .moving-image {
-            width: 300px;
-            /* 图片宽度 */
-            height: auto;
-            /* 自动计算高度 */
-            position: absolute;
-            /* top: 50%; */
-            /* 图片垂直居中 */
-            animation: moveRightLeft 10s linear infinite;
-            /* 4秒完成一次循环 */
-        }
-
-        /* 左右移动动画 */
-        @keyframes moveRightLeft {
-
-            0%,
-            100% {
-                left: 0;
-                /* 最左边 */
-            }
-
-            50% {
-                left: calc(100% - 300px);
-                /* 最右边 */
-            }
-        }
-
-
-
-
         body {
             background-color: bisque;
             color: white;
             /* 改变文本颜色以确保可读性 */
-        }
-
-        button {
-            border: none;
-            background-color: rgba(0, 0, 0, 0);
-        }
-
-        video {
-            width: 600px;
-            border-radius: 100px;
         }
 
         .custom-button {
@@ -86,101 +40,38 @@
     <div style="text-align: center;" id="clock"></div>
     <br>
 
-    <img src="go.png" alt="Moving Image" class="moving-image">
 
-    <br><br><br>
+
+
     <div style="text-align: center;">
-        <video class="video" src="video1.mp4" id="video1"></video>
-        <br>
-        <div style="text-align: center;">
-            <progress id="progress1" value="0" max="100">
-                <div id="bar"></div>
-            </progress>
-        </div>
-    </div>
-    <div style="text-align: center;">
-        <button class="button" onclick="choose1()" id="button">
-            <img width="30px" id="button_img1" src="play.jpg" />
-        </button>
+        <button class="custom-button" onclick="music()">听音乐</button>
     </div>
 
     <div style="text-align: center;">
-        <video class="video" src="video2.mp4" id="video2"></video>
-        <br>
-        <div style="text-align: center;">
-            <progress id="progress2" value="0" max="100">
-                <div id="bar"></div>
-            </progress>
-        </div>
+        <button class="custom-button" onclick="video()">刷视频</button>
     </div>
 
     <div style="text-align: center;">
-        <button class="button" onclick="choose2()" id="button">
-            <img width="30px" id="button_img2" src="play.jpg" />
-        </button>
-    </div>
-
-    <div style="text-align: center;">
-        <button class="custom-button" onclick="blog()">查看简历</button>
-    </div>
-
-
-    <div style="text-align: center;">
-        <button class="custom-button" onclick="music()">音乐库</button>
+        <button class="custom-button" onclick="author()">联系作者</button>
     </div>
 
     <script>
-        var key = "播放";
-        var video1 = document.getElementById("video1");
-        var progress1 = document.getElementById("progress1");
-        var video2 = document.getElementById("video2");
-        var progress2 = document.getElementById("progress2");
-
-        function choose1() {
-            if (key == "播放") {
-                video1.play();
-                key = "暂停";
-                button_img1.src = "pause.jpg";
-            } else {
-                video1.pause();
-                key = "播放";
-                button_img1.src = "play.jpg";
-            }
-        }
-
-        function choose2() {
-            if (key == "播放") {
-                video2.play();
-                key = "暂停";
-                button_img2.src = "pause.jpg";
-            } else {
-                video2.pause();
-                key = "播放";
-                button_img2.src = "play.jpg";
-            }
-        }
-
-
-        function blog() {
-            // 使用 window.location.href 实现页面跳转
-            window.location.href = "page3.html";
-        }
-
-
         function music() {
             // 使用 window.location.href 实现页面跳转
             window.location.href = "page4.html";
         }
 
-        video1.addEventListener("timeupdate", function () {
-            progress1.value = video1.currentTime / video1.duration * 100;
-        });
 
-        video2.addEventListener("timeupdate", function () {
-            progress2.value = video2.currentTime / video2.duration * 100;
-        });
+        function video() {
+            // 使用 window.location.href 实现页面跳转
+            window.location.href = "page5.html";
+        }
 
 
+        function author() {
+            // 使用 window.location.href 实现页面跳转
+            window.location.href = "page6.html";
+        }
 
         function updateTime() {
             clock.innerHTML = new Date().toLocaleString();
@@ -189,11 +80,6 @@
         updateTime();
         // 更新时间并设置定时器以每秒更新一次
         setInterval(updateTime, 1000);
-
-
-
-
-
     </script>
 
 </body>
