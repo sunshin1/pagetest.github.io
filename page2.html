@@ -83,7 +83,6 @@
 
     <hr />
     <br>
-    <!-- <div style="color: black;font-weight: bold;text-align: center;">北京时间</div> -->
     <div style="text-align: center;" id="clock"></div>
     <br>
 
@@ -169,18 +168,6 @@
         video2.addEventListener("timeupdate", function () {
             progress2.value = video2.currentTime / video2.duration * 100;
         });
-
-
-
-        // function updateTime() {
-        //     const clockElement = document.getElementById('clock');
-        //     const now = new Date();
-        //     const hours = now.getHours().toString().padStart(2, '0');
-        //     const minutes = now.getMinutes().toString().padStart(2, '0');
-        //     const seconds = now.getSeconds().toString().padStart(2, '0');
-        //     const timeString = `${hours}:${minutes}:${seconds}`;
-        //     clockElement.textContent = timeString;
-        // }
 
 
 
