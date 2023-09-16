@@ -1,0 +1,25 @@
+<!--音乐的播放-->
+<button id="a" onclick="playMusic()">播放</button>
+<div id="d1"></div>
+<script src="5.js"></script>
+
+<script>
+    var music = new Audio();
+    music.src = "Zachary Knowles - for life.mp3";
+
+    function up() {
+        d1.innerHTML = parseTime(music.currentTime)
+    }
+
+    function playMusic() {
+        if (a.innerHTML == "播放") {
+            setInterval(up, 1000);
+            music.play();
+            a.innerHTML = "暂停";
+
+        } else {
+            music.pause();
+            a.innerHTML = "播放"
+        }
+    }
+</script>
