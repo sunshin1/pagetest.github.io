@@ -1,0 +1,42 @@
+<style>
+    /* 图片样式 */
+    .moving-image {
+        width: 300px;
+        /* 图片宽度 */
+        height: auto;
+        /* 自动计算高度 */
+        position: absolute;
+        /* top: 50%; */
+        /* 图片垂直居中 */
+        animation: moveRightLeft 10s linear infinite;
+        /* 4秒完成一次循环 */
+    }
+
+    /* 左右移动动画 */
+    @keyframes moveRightLeft {
+
+        0%,
+        100% {
+            left: 0;
+            /* 最左边 */
+        }
+
+        50% {
+            left: calc(100% - 300px);
+            /* 最右边 */
+        }
+    }
+</style>
+
+<img src="go.png" alt="Moving Image" class="moving-image">
+<br><br><br>
+<div style="text-align: center;">
+    <button class="custom-button" onclick="blog()">工作联系,查看作者简历</button>
+</div>
+
+<script>
+    function blog() {
+        // 使用 window.location.href 实现页面跳转
+        window.location.href = "page3.html";
+    }
+</script>
