@@ -1,7 +1,35 @@
+<style>
+    body {
+        background-color: black;
+    }
+
+    .sing_name {
+
+        width: 20px;
+        height: 20px;
+        color: bisque;
+        font-weight: bold;
+    }
+
+    .timego {
+        color: beige;
+    }
+
+    .playbutton {
+        width: 50px;
+        height: 30px;
+        color: black;
+        border-radius: 20px;
+        background-color: burlywood;
+    }
+</style>
+
+
 <!--音乐的播放-->
-<button id="a" onclick="playMusic()">播放</button>
-<br><br>
-<div id="d1"></div>
+<a class="sing_name">for-life</a>
+<button class="playbutton" id="a" onclick="playMusic()">播放</button>
+<br>
+<div class="timego" id="d1"></div>
 <div id="d2" style="border-radius: 20px;width: 1000px;height: 10px;background-color: antiquewhite;">
     <div id="d3" style="border-radius: 20px;width: 0px;height: 10px;background-color: burlywood;"></div>
 </div>
