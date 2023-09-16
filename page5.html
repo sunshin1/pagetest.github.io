@@ -1,0 +1,97 @@
+<style>
+    video {
+        width: 600px;
+        border-radius: 100px;
+    }
+
+
+    button {
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+</style>
+
+<body>
+
+
+
+
+    <br><br><br>
+    <div style="text-align: center;">
+        <video class="video" src="video1.mp4" id="video1"></video>
+        <br>
+        <div style="text-align: center;">
+            <progress id="progress1" value="0" max="100">
+                <div id="bar"></div>
+            </progress>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <button class="button" onclick="choose1()" id="button">
+            <img width="30px" id="button_img1" src="play.jpg" />
+        </button>
+    </div>
+
+    <div style="text-align: center;">
+        <video class="video" src="video2.mp4" id="video2"></video>
+        <br>
+        <div style="text-align: center;">
+            <progress id="progress2" value="0" max="100">
+                <div id="bar"></div>
+            </progress>
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <button class="button" onclick="choose2()" id="button">
+            <img width="30px" id="button_img2" src="play.jpg" />
+        </button>
+    </div>
+
+    <script>
+        var key = "播放";
+        var video1 = document.getElementById("video1");
+        var progress1 = document.getElementById("progress1");
+        var video2 = document.getElementById("video2");
+        var progress2 = document.getElementById("progress2");
+
+        function choose1() {
+            if (key == "播放") {
+                video1.play();
+                key = "暂停";
+                button_img1.src = "pause.jpg";
+            } else {
+                video1.pause();
+                key = "播放";
+                button_img1.src = "play.jpg";
+            }
+        }
+
+        function choose2() {
+            if (key == "播放") {
+                video2.play();
+                key = "暂停";
+                button_img2.src = "pause.jpg";
+            } else {
+                video2.pause();
+                key = "播放";
+                button_img2.src = "play.jpg";
+            }
+        }
+
+
+
+        video1.addEventListener("timeupdate", function () {
+            progress1.value = video1.currentTime / video1.duration * 100;
+        });
+
+        video2.addEventListener("timeupdate", function () {
+            progress2.value = video2.currentTime / video2.duration * 100;
+        });
+
+    </script>
+
+
+
+
+</body>
