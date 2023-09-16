@@ -15,6 +15,24 @@
         color: beige;
     }
 
+
+    .Progression_inner {
+        border-radius: 20px;
+        width: 1000px;
+        height: 10px;
+        background-color: antiquewhite;
+
+    }
+
+    .Progression_out {
+        border-radius: 20px;
+        width: 0px;
+        height: 10px;
+        background-color: burlywood;
+    }
+
+
+
     .playbutton {
         width: 50px;
         height: 30px;
@@ -30,8 +48,8 @@
 <button class="playbutton" id="a" onclick="playMusic()">播放</button>
 <br>
 <div class="timego" id="d1"></div>
-<div id="d2" style="border-radius: 20px;width: 1000px;height: 10px;background-color: antiquewhite;">
-    <div id="d3" style="border-radius: 20px;width: 0px;height: 10px;background-color: burlywood;"></div>
+<div id="d2" class="Progression_inner">
+    <div id="d3" class="Progression_out"></div>
 </div>
 <script src="5.js"></script>
 
