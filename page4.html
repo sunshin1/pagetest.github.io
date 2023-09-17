@@ -35,7 +35,6 @@
     }
 
 
-
     .playbutton {
         width: 50px;
         height: 30px;
@@ -58,18 +57,17 @@
 
 
 
-
 <script>
     var music = new Audio();
     music.src = "Zachary Knowles - for life.mp3";
 
 
-    function playThis(event) {
-        music.currentTime = music.duration * (event.offsetX / 1000);
+    function playThis(e) {
+        music.currentTime = music.duration * (e.offsetX / 1000);
     }
 
     function up() {
-        d1.innerHTML = parseTime(music.currentTime)
+        // d1.innerHTML = parseTime(music.currentTime);
         var rate = 1000 * (music.currentTime / music.duration);
         d3.style.width = rate + "px";
         d1.innerHTML = parseTime(music.currentTime);
@@ -77,10 +75,9 @@
 
     function playMusic() {
         if (a.innerHTML == "播放") {
-            setInterval(up, 10);
+            setInterval(up, 1000);
             music.play();
             a.innerHTML = "暂停";
-
         } else {
             music.pause();
             a.innerHTML = "播放"
