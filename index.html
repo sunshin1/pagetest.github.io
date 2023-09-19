@@ -1,105 +1,411 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>登录</title>
     <style>
-        /* 添加一些样式以美化登录界面 */
-        body {
+        * {
+
             margin: 0;
+
             padding: 0;
-            font-family: Arial, sans-serif;
+
+            box-sizing: border-box;
+
+            font-family: 'Poppins', sans-serif;
+
         }
 
-        .container {
+        body {
+
+            overflow: hidden;
+
+        }
+
+        section {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            min-height: 100vh;
+
+            background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+
+        }
+
+        section .color {
+
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
+
+            filter: blur(150px);
+
         }
 
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+        section .color:nth-child(1) {
+
+            top: -350px;
+
+            width: 600px;
+
+            height: 600px;
+
+            background: #ff359b;
+
         }
 
-        .login-form {
+        section .color:nth-child(2) {
 
-            background: rgba(255, 255, 255, 0.7);
-            padding: 20px;
+            bottom: -150px;
+
+            left: 100px;
+
+            width: 500px;
+
+            height: 500px;
+
+            background: #fffd87;
+
+        }
+
+        section .color:nth-child(3) {
+
+            bottom: 50px;
+
+            right: 100px;
+
+            width: 500px;
+
+            height: 500px;
+
+            background: #00d2ff;
+
+        }
+
+        .box {
+
+            position: relative;
+
+        }
+
+        .box .square {
+
+            position: absolute;
+
+            backdrop-filter: blur(5px);
+
+            box-shadow: 0 25px 45px rgb(0, 0, 0, 0.1);
+
+            border: 1px solid rgb(255, 255, 255, 0.5);
+
+            border-right: 1px solid rgb(255, 255, 255, 0.2);
+
+            border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+
+            background: rgb(255, 255, 255, 0.1);
+
             border-radius: 10px;
+
+            animation: animate 10s linear infinite;
+
+            animation-delay: calc(-1s*var(--i));
+
         }
 
-        /* 渐变按钮样式 */
-        .gradient-button {
-            background: linear-gradient(135deg, #FFC0CB, #FF5733);
-            color: white;
-            font-size: 9px;
-            padding: 7.5px 20px;
-            border: none;
-            border-radius: 12.5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            font-weight: bold;
-        }
+        /* 动画 */
 
-        .gradient-button:hover {
-            background: linear-gradient(135deg, #FFA07A, #E34234);
-        }
+        @keyframes animate {
 
+            0%,
+            100% {
 
-
-        /* 添加其他登录界面样式 */
-    </style>
-</head>
-
-<body>
-    <!-- 视频背景 -->
-    <video class="video-background" autoplay muted loop>
-        <!-- 在此处添加视频源 -->
-        <source src="video3.mp4" type="video/mp4">
-    </video>
-
-    <!-- 登录表单容器 -->
-    <div class="container">
-        <!-- < class="login-form"> -->
-        <!-- 在此处添加登录表单内容 -->
-        <!-- 例如：用户名和密码输入框、登录按钮等 -->
-        <!-- <h2>登录</h2> -->
-        <!-- 用户名输入框 -->
-        <br><br>
-        <hr>
-        <div style="color: aliceblue;font-weight: bold;">账号</div>
-        <input style="height: 25px;" type="text" id="username" name="username" required>
-        <div style="color: aliceblue;font-weight: bold;">密码</div>
-        <!-- 密码输入框 -->
-        <input style="height: 25px;" type="password" id="password" name="password" required>
-        <br><br>
-        <!-- 登录按钮 -->
-        <button class="gradient-button" type="submit" onclick="login()">登录</button>
-        <hr>
-        <script>
-            function login() {
-                if (username.value == 'sunao' && password.value == 'unknow') {
-                    // 使用 window.location.href 实现页面跳转
-                    window.location.href = "page2.html";
-                } else {
-                    alert("error");
-                }
+                transform: translateY(-40px);
 
             }
 
+            50% {
 
-        </script>
-    </div>
-    </div>
+                transform: translate(40px);
+
+            }
+
+        }
+
+        .box .square:nth-child(1) {
+
+            top: -50px;
+
+            right: -60px;
+
+            width: 100px;
+
+            height: 100px;
+
+        }
+
+        .box .square:nth-child(2) {
+
+            top: 150px;
+
+            left: -100px;
+
+            width: 120px;
+
+            height: 120px;
+
+            z-index: 2;
+
+        }
+
+        .box .square:nth-child(3) {
+
+            bottom: 50px;
+
+            right: -60px;
+
+            width: 80px;
+
+            height: 80px;
+
+            z-index: 2;
+
+        }
+
+        .box .square:nth-child(4) {
+
+            bottom: -80px;
+
+            left: 100px;
+
+            width: 50px;
+
+            height: 50px;
+
+        }
+
+        .box .square:nth-child(5) {
+
+            top: -90px;
+
+            left: 140px;
+
+            width: 60px;
+
+            height: 60px;
+
+        }
+
+        .container {
+
+            position: relative;
+
+            width: 400px;
+
+            min-height: 400px;
+
+            background: rgb(255, 255, 255, 0.1);
+
+            border-radius: 10px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            backdrop-filter: blur(5px);
+
+            box-shadow: 0 25px 45px rgb(0, 0, 0, 0.1);
+
+            border: 1px solid rgb(255, 255, 255, 0.5);
+
+            border-right: 1px solid rgb(255, 255, 255, 0.2);
+
+            border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+
+        }
+
+        .form {
+
+            position: relative;
+
+            height: 100%;
+
+            width: 100%;
+
+            padding: 40px;
+
+        }
+
+        .form h2 {
+
+            position: relative;
+
+            color: #fff;
+
+            font-size: 24px;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 40px;
+
+        }
+
+        .form h2::before {
+
+            content: '';
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -10px;
+
+            width: 80px;
+
+            height: 4px;
+
+            background: #fff;
+
+        }
+
+        .form .inputBox {
+
+            width: 100%;
+
+            margin-top: 20px;
+
+        }
+
+        .form .inputBox input {
+
+            width: 100%;
+
+            background: rgb(255, 255, 255, 0.2);
+
+            border: none;
+
+            outline: none;
+
+            padding: 10px 20px;
+
+            border-radius: 35px;
+
+            border: 1px solid rgb(255, 255, 255, 0.5);
+
+            border-right: 1px solid rgb(255, 255, 255, 0.2);
+
+            border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+
+            font-size: 16px;
+
+            letter-spacing: 1px;
+
+            color: #fff;
+
+            box-shadow: 0 5px 15px rgb(0, 0, 0, 0.05);
+
+        }
+
+        .form .inputBox input::placeholder {
+
+            color: #fff;
+
+        }
+
+        .form .inputBox input[type="submit"] {
+
+            background: #fff;
+
+            color: #666;
+
+            max-width: 100px;
+
+            cursor: pointer;
+
+            margin-bottom: 20px;
+
+            font-weight: 600;
+
+        }
+
+        .forget {
+
+            margin-top: 5px;
+
+            color: #fff;
+
+        }
+
+        .forget a {
+
+            color: #fff;
+
+            font-weight: 600;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <div class="square" style="--i:0;"></div>
+            <div class="square" style="--i:1;"></div>
+            <div class="square" style="--i:2;"></div>
+            <div class="square" style="--i:3;"></div>
+            <div class="square" style="--i:4;"></div>
+            <div class="container">
+                <div class="form">
+                    <h2>Login Form</h2>
+                    <!-- 添加id属性，以便在JavaScript中引用 -->
+                    <form id="loginForm" onsubmit="return validateForm()">
+                        <div class="inputBox">
+                            <input type="text" id="username" placeholder="Username">
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" id="password" placeholder="Password">
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Login">
+                        </div>
+                        <p class="forget">Forget Password ?<a href="#">Click Here</a></p>
+                        <p class="forget">Don't have an account ?<a href="#">Sign up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // JavaScript部分
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // 检查用户名和密码是否匹配
+            if (username === "sunao" && password === "sunao") {
+                // 如果匹配，重定向到page2.html
+                window.location.href = "page2.html";
+                return false; // 防止表单正常提交
+            } else {
+                // 如果不匹配，可以添加错误消息或其他处理
+                alert("用户名或密码不正确");
+                return false; // 阻止表单提交
+            }
+        }
+    </script>
 </body>
 
 </html>
