@@ -37,6 +37,24 @@
             border-color: #c1c1c1;
             color: #555;
         }
+
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button-group button {
+            margin: 50px 0;
+            /* 上下的间距为10px */
+        }
+
+        .button-glass {
+            background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+            /* 背景渐变 */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            /* 阴影效果 */
+        }
     </style>
 </head>
 
@@ -50,21 +68,21 @@
 
 
 
+    <div class="button-group">
+        <div style="text-align: center;" class="button-glass">
+            <button class="custom-button" onclick="music()">听音乐</button>
+        </div>
 
-    <div style="text-align: center;">
-        <button class="custom-button" onclick="music()">听音乐</button>
-    </div>
 
 
+        <div style="text-align: center;" class="button-glass">
+            <button class="custom-button" onclick="video()">刷视频</button>
+        </div>
 
-    <div style="text-align: center;">
-        <button class="custom-button" onclick="video()">刷视频</button>
-    </div>
 
-    <div></div>
-
-    <div style="text-align: center;">
-        <button class="custom-button" onclick="author()">联系作者</button>
+        <div style="text-align: center;" class="button-glass">
+            <button class="custom-button" onclick="author()">联系作者</button>
+        </div>
     </div>
 
     <script>
